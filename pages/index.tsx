@@ -1,4 +1,5 @@
 import Sidebar from '@/components/Sidebar';
+import AppContent from '@/components/AppContent';
 import Head from 'next/head';
 
 export default function Home() {
@@ -9,9 +10,9 @@ export default function Home() {
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="flex">
         <Sidebar />
-        {/* Center */}
+        <AppContent />
       </main>
 
       <div>{/* player */}</div>
