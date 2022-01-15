@@ -1,9 +1,13 @@
 {
   "private": true,
   "scripts": {
+    "debug": "node --inspect-brk node_modules/.bin/next dev",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "fix": "npx eslint --fix --ext .js,.ts,.tsx .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(vue|js|jsx|ts|tsx|json|css|scss|md|html)\""
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
@@ -18,7 +22,11 @@
     "@types/react": "17.0.38",
     "@types/spotify-web-api-node": "^5.0.6",
     "autoprefixer": "^10.4.0",
+    "eslint": "8.6.0",
+    "eslint-config-next": "12.0.8",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
     "tailwindcss": "^3.0.7",
     "typescript": "4.5.4"
   }
