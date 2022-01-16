@@ -1,10 +1,11 @@
 import {InferGetServerSidePropsType} from 'next';
-import {getProviders, signIn, ClientSafeProvider} from 'next-auth/react';
+import Image from 'next/image';
+import {ClientSafeProvider, getProviders, signIn} from 'next-auth/react';
 
 function LoginPage({providers}: {providers: InferGetServerSidePropsType<typeof getServerSideProps>}) {
   return (
     <div className="flex flex-col items-center justify-center bg-black h-screen">
-      <img className="w-52 mb-5" src="/assets/spotify.png" alt="Spotify logo" />
+      <Image className="w-52 mb-5" src="/assets/spotify.png" alt="Spotify logo" />
 
       {providers &&
         (Object.values(providers) as unknown as ClientSafeProvider[]).map((provider: ClientSafeProvider) => (

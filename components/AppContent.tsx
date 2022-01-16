@@ -1,7 +1,7 @@
 import {ChevronDownIcon} from '@heroicons/react/outline';
+import {shuffle} from 'lodash';
 import {useSession} from 'next-auth/react';
 import {useEffect, useState} from 'react';
-import {shuffle} from 'lodash';
 
 const colors = [
   'from-indigo-500',

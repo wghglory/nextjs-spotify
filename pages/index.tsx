@@ -1,6 +1,7 @@
-import Sidebar from '@/components/Sidebar';
-import AppContent from '@/components/AppContent';
 import Head from 'next/head';
+
+import AppContent from '@/components/AppContent';
+import Sidebar from '@/components/Sidebar';
 
 export default function Home() {
   return (
