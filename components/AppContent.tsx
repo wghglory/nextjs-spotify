@@ -7,6 +7,8 @@ import {useRecoilValue} from 'recoil';
 import {playlistIdState} from '@/atoms/playlistAtom';
 import useSpotify from '@/hooks/useSpotify';
 
+import SongList from './SongList';
+
 const colors = [
   'from-indigo-500',
   'from-blue-500',
@@ -44,7 +46,7 @@ function AppContent() {
   }, [playlistId, spotifyApi]);
 
   return (
-    <div className="flex-grow">
+    <div className="flex-grow overflow-y-auto h-screen no-scrollbar">
       <header className="absolute right-8 top-6">
         <button
           className="flex items-center text-white bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2"
@@ -63,6 +65,8 @@ function AppContent() {
           <h1 className="text-2xl md:text-3xl lg:text-5xl text-bold">{playlist?.name}</h1>
         </div>
       </section>
+
+      {playlist && <SongList playlist={playlist} />}
     </div>
   );
 }
