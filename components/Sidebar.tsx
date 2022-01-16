@@ -1,8 +1,21 @@
 import {HomeIcon, SearchIcon, LibraryIcon, HeartIcon, RssIcon, PlusCircleIcon} from '@heroicons/react/outline';
+import useSpotify from 'hooks/useSpotify';
 import {signOut, useSession} from 'next-auth/react';
+import {useEffect, useState} from 'react';
 
 function Sidebar() {
-  const {data: session, status} = useSession();
+  const {data: session} = useSession();
+  const [playlist, setPlaylist] = useState<SpotifyApi.PlaylistObjectSimplified[]>([]);
+  const spotifyApi = useSpotify();
+
+  useEffect(() => {
+    if (spotifyApi.getAccessToken()) {
+      spotifyApi.getUserPlaylists().then((res) => {
+        setPlaylist(res.body.items);
+      });
+    }
+  }, [spotifyApi, session]);
+
   //  session is like {
   //     "user": {
   //         "name": "Guanghui Wang",
@@ -47,13 +60,11 @@ function Sidebar() {
         </button>
         <hr className="border-t-[0.1px] border-gray-900" />
 
-        {/* TODO: playlist */}
-        <p className="cursor-pointer hover:text-white">Playlist name...</p>
-        <p className="cursor-pointer hover:text-white">Playlist name...</p>
-        <p className="cursor-pointer hover:text-white">Playlist name...</p>
-        <p className="cursor-pointer hover:text-white">Playlist name...</p>
-        <p className="cursor-pointer hover:text-white">Playlist name...</p>
-        <p className="cursor-pointer hover:text-white">Playlist name...</p>
+        {playlist.map((p) => (
+          <p key={p.id} className="cursor-pointer hover:text-white">
+            {p.name}
+          </p>
+        ))}
       </div>
     </div>
   );
