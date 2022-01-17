@@ -5,9 +5,8 @@ import {
   ReplyIcon,
   SwitchHorizontalIcon,
   VolumeUpIcon as VolumeDownIcon,
-  VolumeUpIcon,
 } from '@heroicons/react/outline';
-import {RewindIcon} from '@heroicons/react/solid';
+import {RewindIcon, VolumeUpIcon} from '@heroicons/react/solid';
 import {debounce} from 'lodash';
 import {useSession} from 'next-auth/react';
 import {useCallback, useEffect, useState} from 'react';
