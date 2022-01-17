@@ -1,5 +1,15 @@
 # Spotify App by Next.js + Tailwind CSS
 
+Deployed at https://derek-nextjs-spotify.vercel.app/
+
+## Tech Highlights
+
+- Nextjs v12 (middleware, server rendering)
+- NextAuth v4
+- Spotify Web API for node
+- Tailwind v3, custom layout components
+- Recoil for managing global state such as current track, isPlay, playlist id
+
 ## Setup
 
 ```bash
