@@ -8,7 +8,7 @@ import useSpotify from './useSpotify';
 function useSongInfo() {
   const spotifyApi = useSpotify();
   const [currentIdTrack, setCurrentIdTrack] = useRecoilState(currentTrackIdState);
-  const [songInfo, setSongInfo] = useState<any>(); // TODO: type
+  const [songInfo, setSongInfo] = useState<SpotifyApi.SingleTrackResponse>();
 
   useEffect(() => {
     if (currentIdTrack) {
@@ -18,8 +18,7 @@ function useSongInfo() {
         },
       })
         .then((res) => res.json())
-        .then((trackInfo) => {
-          console.log(trackInfo);
+        .then((trackInfo: SpotifyApi.SingleTrackResponse) => {
           setSongInfo(trackInfo);
         });
     }
