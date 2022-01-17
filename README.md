@@ -2,6 +2,10 @@
 
 Deployed at https://derek-nextjs-spotify.vercel.app/
 
+Demo Video
+
+https://user-images.githubusercontent.com/11544273/149727516-e56d8d61-e08b-4ffd-aeaa-5f99e860f73e.mp4
+
 ## Tech Highlights
 
 - Nextjs v12 (middleware, server rendering)
